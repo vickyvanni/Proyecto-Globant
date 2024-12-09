@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Comida</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/hamburguesa.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Crazy Food</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="boton-pedido">
+                <a href="#" id="boton-ordenar" class="btn">Ordenar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="contenido-banner">
+            <h2>¡Pide en Crazy Special ahora y obtén un 10% de descuento!</h2>
+            <a href="#" id="boton-ordenar-banner" class="btn">Ordenar</a>
+        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide" style="background-image: url('img/hamburguesaClasica.avif');"></div>
+                <div class="slide" style="background-image: url('img/Hamburguesa Vegetariana.jpg');"></div>
+                <div class="slide" style="background-image: url('img/Hamburguesa con Bacon.webp');"></div>
+            </div>
+            <button class="prev" onclick="cambiarImagen(-1)">&#10094;</button>
+            <button class="next" onclick="cambiarImagen(1)">&#10095;</button>
+        </div>
+    </section>
+    
+
+    <!-- Menú -->
+    <section id="menu" class="seccion-menu">
+        <h2>Menú de Hamburguesas</h2>
+        <div class="grid-menu">
+
+            <div class="item-menu" data-id="hamburguesa-clasica">
+                <h3>Hamburguesa Clásica</h3>
+                <img src="img/hamburguesaClasica.avif" alt="Imagen de Hamburguesa Clásica">
+                <p>Ingredientes: Carne de res, queso cheddar, lechuga, tomate, mayonesa, ketchup.</p>
+                <p>Precio: $350</p>
+            </div>
+
+            <div class="item-menu" data-id="hamburguesa-con-huevo">
+                <h3>Hamburguesa con Huevo</h3>
+                <img src="img/hamburguesaHuevo.png" alt="Imagen de Hamburguesa con Huevo">
+                <p>Ingredientes: Carne de res, queso, lechuga, tomate, huevo frito, mayonesa.</p>
+                <p>Precio: $400</p>
+            </div>
+
+            <div class="item-menu" data-id="hamburguesa-doble-carne">
+                <h3>Hamburguesa Doble Carne</h3>
+                <img src="img/dobleHamburguesa.png" alt="Imagen de Hamburguesa Doble Carne">
+                <p>Ingredientes: Doble carne de res, queso cheddar, cebolla caramelizada, mayonesa.</p>
+                <p>Precio: $450</p>
+            </div>
+
+            <div class="item-menu" data-id="hamburguesa-bbq">
+                <h3>Hamburguesa BBQ</h3>
+                <img src="img/Hamburguesa BBQ.webp" alt="Imagen de Hamburguesa BBQ">
+                <p>Ingredientes: Carne de res, bacon, queso cheddar, cebolla morada, salsa barbacoa.</p>
+                <p>Precio: $470</p>
+            </div>
+
+            <div class="item-menu" data-id="hamburguesa-con-bacon">
+                <h3>Hamburguesa con Bacon</h3>
+                <img src="img/Hamburguesa con Bacon.webp" alt="Imagen de Hamburguesa con Bacon">
+                <p>Ingredientes: Carne de res, bacon crujiente, lechuga, tomate, mayonesa, ketchup.</p>
+                <p>Precio: $420</p>
+            </div>
+
+            <div class="item-menu" data-id="hamburguesa-vegetariana">
+                <h3>Hamburguesa Vegetariana</h3>
+                <img src="img/Hamburguesa Vegetariana.jpg" alt="Imagen de Hamburguesa Vegetariana">
+                <p>Ingredientes: Hamburguesa de vegetales, lechuga, tomate, cebolla morada, mayonesa vegana.</p>
+                <p>Precio: $390</p>
+            </div>
+
+        </div>
+        <div id="contador" style="display:none;">
+            <p>Productos seleccionados: <span id="contador-productos">0</span></p>
+            <p>Total: $<span id="total-gasto">0.00</span></p>
+        </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section id="sobre-nosotros" class="por-que-nosotros">
+        <h2>Datos de Contacto</h2>
+        <div class="datos">
+            <p><strong>📍 Dirección:</strong> Avenida del Parrillero 1234, Montevideo, Uruguay.</p>
+            <p><strong>📞 Teléfono:</strong> +598 1234 5678</p>
+            <p><strong>📧 Email:</strong> contacto@restauranteuruguayo.com</p>
+            <p><strong>🕒 Horarios:</strong></p>
+            <ul>
+                <li>Lunes a Viernes: 12:00 - 15:00 / 19:00 - 23:00</li>
+                <li>Sábados: 12:00 - 16:00 / 19:00 - 00:00</li>
+                <li>Domingos: 12:00 - 16:00</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Opiniones -->
+    <section id="opiniones" class="opiniones">
+        <h2>Opiniones</h2>
+        <div class="carousel-opiniones" id="carousel-opiniones">
+            <!-- Opiniones predefinidas -->
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto" class="formulario-contacto">
+        <h2>Deja tu mensaje y lo añadiremos a las opiniones</h2>
+        <form id="formulario-opinion">
+            <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+            <input type="email" id="email" name="email" placeholder="Tu Correo Electrónico" required>
+            <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Crazy Food. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

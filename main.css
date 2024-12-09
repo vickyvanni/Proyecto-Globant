@@ -1,0 +1,430 @@
+/* ============================ */
+/*          ESTILO GLOBAL       */
+/* ============================ */
+
+body {
+    font-family: 'Fira Sans', Arial;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #fff4d7; /* Color dorado */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    background-color: #d32f2f; /* Rojo oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #c2185b; /* Color rojo más oscuro al hacer hover */
+}
+
+.FiraSans-font {
+    font-family: "Fira Sans", Arial;
+    font-optical-sizing: auto;
+    font-weight: 30px;
+    font-style: normal;
+}
+
+/* ============================ */
+/*            NAVBAR            */
+/* ============================ */
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff9800; /* Naranja */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Transición para el cambio de fondo */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos para cada elemento de la lista */
+.nav-links li {
+    display: inline;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Color de texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para color y tamaño */
+}
+
+/* Efecto cuando el mouse pasa sobre los enlaces */
+.nav-links a:hover {
+    color: #ff5722; /* Rojo oscuro al pasar el mouse */
+    transform: scale(1.1); /* Aumenta el tamaño ligeramente */
+}
+
+/* Efecto cuando el enlace está presionado */
+.nav-links a:active {
+    color: #d32f2f; /* Rojo más oscuro cuando se hace clic */
+    transform: scale(0.95); /* Reduce ligeramente el tamaño al presionar */
+}
+
+/* Efecto al pasar el mouse por encima de la barra de navegación */
+.navbar:hover {
+    background-color: #f57c00; /* Cambia a un tono más oscuro de naranja al pasar el mouse */
+}
+
+
+.boton-pedido a {
+    background-color: #d32f2f; /* Rojo oscuro */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el mouse por encima */
+.boton-pedido a:hover {
+    background-color: #c62828;  /* Rojo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta el tamaño del botón */
+}
+
+/* Efecto cuando el botón está presionado */
+.boton-pedido a:active {
+    background-color: #b71c1c;  /* Rojo aún más oscuro al presionar */
+    transform: scale(0.98); /* Reduce ligeramente el tamaño al presionar */
+}
+
+
+/* ============================ */
+/*            BANNER            */
+/* ============================ */
+
+/* Banner Container */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajusta la altura según sea necesario */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Si quieres que la imagen se quede fija al hacer scroll */
+}
+
+/* Slider Container */
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 0; /* Asegura que las flechas y el contenido del banner estén por encima */
+}
+
+/* El slider que contiene las imágenes */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Asegúrate de que el slider cubra todas las imágenes */
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Flechas de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);  /* Fondo completamente transparente */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;  /* Asegura que las flechas estén por encima de las imágenes */
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+     /* Asegura que las flechas se ubiquen al costado de la imagen */
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+/* Coloca la flecha anterior a la izquierda del slider */
+.prev {
+    left: 10px;  /* Alineación a la izquierda */
+}
+
+/* Coloca la flecha siguiente a la derecha del slider */
+.next {
+    right: 10px;  /* Alineación a la derecha */
+}
+
+/* Flechas en su estado activo */
+.prev:active, .next:active {
+    background-color: rgba(0, 0, 0, 0); 
+}
+
+/* Flechas cuando tienen el foco */
+.prev:focus, .next:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0); 
+}
+
+/* Flechas cuando pasan el mouse sobre ellas */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Un pequeño cambio de color al pasar el mouse */
+}
+
+/* Fondo oscuro con transparencia para mejorar la visibilidad del texto */
+.banner .contenido-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Asegura que el texto esté encima de la imagen */
+    color: white;
+    padding: 20px;
+}
+
+/* Sombra en el texto */
+.contenido-banner h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Agrega sombra para que el texto se vea más claro sobre la imagen */
+}
+
+/* Estilos del botón */
+#boton-ordenar-banner {
+    background-color: #F44336;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Efecto al pasar el mouse por encima */
+#boton-ordenar-banner:hover {
+    background-color: #D32F2F;  /* Cambia el color de fondo cuando pasa el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Efecto cuando el botón está presionado */
+#boton-ordenar-banner:active {
+    background-color: #C62828;  /* Color más oscuro al presionar */
+    transform: scale(0.98); /* Reduce ligeramente el tamaño cuando se presiona */
+}
+/* ============================ */
+/*            MENÚ              */
+/* ============================ */
+
+.seccion-menu {
+    padding: 20px;
+    background-color:  #f0a754;;
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.item-menu {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f3f3f3; /* Gris claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Efecto de agrandado suave */
+}
+
+.item-menu img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item-menu h3 {
+    font-size: 1.5rem;
+    color: #ff9800; /* Naranja */
+    margin-top: 10px;
+}
+
+.item-menu p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.item-menu p:last-child {
+    font-weight: bold;
+    color: #d32f2f; /* Rojo oscuro */
+}
+
+/* Efecto para agrandar los ítems del menú */
+.item-menu:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ítem al 110% */
+}
+
+
+/* ============================ */
+/*         BENEFICIOS           */
+/* ============================ */
+
+.por-que-nosotros {
+    padding: 20px;
+    background-color: #ff9800; /* Naranja */
+    color: white;
+}
+
+.beneficios {
+    display: flex;
+    justify-content: space-around;
+}
+
+.beneficio img {
+    width: 50px;
+    height: 50px;
+}
+
+/* ============================ */
+/*         OPINIONES            */
+/* ============================ */
+
+.opiniones {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.carousel-opiniones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.opinion {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+}
+
+/* ============================ */
+/*       FORMULARIO CONTACTO    */
+/* ============================ */
+
+.formulario-contacto {
+    padding: 20px;
+    background-color: #f4b400; /* Dorado */
+}
+
+form input, 
+form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+form button {
+    background-color: #d32f2f; /* Rojo oscuro */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ============================ */
+/*         FORMULARIO PEDIDO    */
+/* ============================ */
+
+#pedido {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+#pedido h2 {
+    text-align: center;
+    color: #ff9800; /* Naranja */
+}
+
+.formulario-pedido {
+    margin: 15px 0;
+}
+
+.formulario-pedido label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+}
+
+.formulario-pedido input, 
+.formulario-pedido select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ============================ */
+/*           CONTADOR           */
+/* ============================ */
+
+#contador {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ============================ */
+/*            FOOTER            */
+/* ============================ */
+
+footer {
+    text-align: center;
+    background-color: #333; /* Negro */
+    color: white;
+    padding: 10px 0;
+}
